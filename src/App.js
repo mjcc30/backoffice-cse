@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import UserTable from "./tables/UserTable";
-import AddUserForm from "./forms/AddUserForm";
-import EditUserForm from "./forms/EditUserForm";
-import useAsyncRequest from "./hooks/useAsyncRequest";
-import url from "./api";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import UserTable from './tables/UserTable';
+import AddUserForm from './forms/AddUserForm';
+import EditUserForm from './forms/EditUserForm';
+import useAsyncRequest from './hooks/useAsyncRequest';
+import url from './api';
+
 const App = () => {
   const [data, loading] = useAsyncRequest();
   const [users, setUsers] = useState(null);
@@ -31,7 +32,7 @@ const App = () => {
     setUsers(users.filter((user) => user._id !== _id));
     await axios.delete(url, {
       headers: {
-        Authorization: "123",
+        Authorization: '123',
       },
       data: {
         _id: _id,
@@ -41,7 +42,7 @@ const App = () => {
 
   const [editing, setEditing] = useState(false);
 
-  const initialUser = { _id: null, email: "", password: "" };
+  const initialUser = { _id: null, email: '', password: '' };
 
   const [currentUser, setCurrentUser] = useState(initialUser);
 

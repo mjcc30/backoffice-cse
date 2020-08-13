@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import url from "../api";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import url from '../api';
 
 const useAsyncRequest = () => {
   const [loading, setLoading] = useState(false);
@@ -13,7 +13,10 @@ const useAsyncRequest = () => {
         const result = await axios(url);
         setData(result.data);
       } catch (err) {
-        console.warn("Something went wrong fetching the serveur...", err);
+        console.warn(
+          "Une erreur s'est produite lors de la récupération du serveur ...",
+          err
+        );
         setLoading(false);
       }
     };

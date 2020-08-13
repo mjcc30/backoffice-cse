@@ -1,5 +1,5 @@
-const hostname = "rpi.mjcc.site";
-const port = 3001;
-const url = `http://${hostname}:${port}/data`;
+const hostname = 'backend-ce-news.herokuapp.com';
+const port = process.env.PORT || 3000;
+const url = `https://${hostname}`;
 
 export default url;
