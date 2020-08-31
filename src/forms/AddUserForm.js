@@ -24,7 +24,7 @@ const AddUserForm = (props) => {
       });
       const wasm = await import('rust_module');
       setWasm(wasm);
-      wasm.greet();
+      wasm.message("Un utilisateur a été créé !");
     }
   };
 

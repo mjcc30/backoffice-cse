@@ -14,6 +14,6 @@ extern {
 }
 
 #[wasm_bindgen]
-pub fn greet() {
-    alert("Un utilisateur a été créé !");
+pub fn message(text: &str) {
+    alert(&format!("{}", text));
 }
