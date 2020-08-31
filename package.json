@@ -16,7 +16,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "@mjcc30/rust_module" : "0.1.0"
+    "rust_module" : "0.1.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
