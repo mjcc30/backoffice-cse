@@ -1,5 +1,10 @@
-FROM node:12.16.2
-WORKDIR /app
-COPY . .
-RUN npm run build
-ENTRYPOINT npm run start
+version: 1.0
+publish: app
+services:
+  app:
+    build:
+      type: dockerfile
+      config: ./.runme/Dockerfile
+    ports:
+      - container: 3000
+        public: 80
