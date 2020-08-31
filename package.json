@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "cd native_module && cd rust_module && cd pkg && npm link && cd .. && cd .. && cd .. && npm link rust_module && react-app-rewired build",
+    "build": "react-app-rewired build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
