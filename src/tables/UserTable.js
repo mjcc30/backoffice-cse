@@ -21,7 +21,7 @@ const UserTable = (props) => {
                 <td>{email}</td>
                 <td>{password}</td>
                 <td>
-                  <button onClick={() => props.deleteUser(_id)}>
+                  <button onClick={() => props.deleteUser(_id, email)}>
                     Supprimer
                   </button>
                   <button onClick={() => props.editUser(_id, user)}>

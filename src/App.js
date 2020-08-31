@@ -9,6 +9,7 @@ import url from './api';
 const App = () => {
   const [data, loading] = useAsyncRequest();
   const [users, setUsers] = useState(null);
+  const [wasm, setWasm] = useState(null);
 
   useEffect(() => {
     if (data) {
@@ -28,7 +29,7 @@ const App = () => {
     setUsers([...users, user]);
   };
 
-  const deleteUser = async (_id) => {
+  const deleteUser = async (_id, email) => {
     setUsers(users.filter((user) => user._id !== _id));
     await axios.delete(url, {
       headers: {
@@ -38,6 +39,9 @@ const App = () => {
         _id: _id,
       },
     });
+    const wasm = await import('rust_module');
+    setWasm(wasm);
+    wasm.message("L'utilisateur " + email + " a été supprimé !");
   };
 
   const [editing, setEditing] = useState(false);

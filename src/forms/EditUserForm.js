@@ -8,6 +8,7 @@ const EditUserForm = (props) => {
   }, [props]);
 
   const [user, setUser] = useState(props.currentUser);
+  const [wasm, setWasm] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,6 +24,9 @@ const EditUserForm = (props) => {
         email: user.email,
         password: user.password,
       });
+      const wasm = await import('rust_module');
+      setWasm(wasm);
+      wasm.message("L'utilisateur " + user.email + " a été modifié !");
     }
   };
 
