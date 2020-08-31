@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import axios from "axios";
-import url from "../api";
+import React, { useState } from 'react';
+import axios from 'axios';
+import url from '../api';
 
 const AddUserForm = (props) => {
-  const initUser = { _id: null, email: "", password: "" };
+  const initUser = { _id: null, email: '', password: '' };
 
   const [user, setUser] = useState(initUser);
+  const [wasm, setWasm] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,6 +22,9 @@ const AddUserForm = (props) => {
         email: user.email,
         password: user.password,
       });
+      const wasm = await import('rust_module');
+      setWasm(wasm);
+      wasm.greet();
     }
   };
 
