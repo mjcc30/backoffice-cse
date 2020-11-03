@@ -1,5 +1,3 @@
-[![Runme](https://runme.io/static/button.svg)](https://runme.io/run?app_id=a93a2af7-ae53-4201-bb97-de1c3c0ac3f9)
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
